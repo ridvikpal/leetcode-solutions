@@ -1,6 +1,9 @@
 from typing import List
 
 
+'''
+https://leetcode.com/problems/find-the-duplicate-number/description/
+'''
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         # note each nums[i] can be through of
