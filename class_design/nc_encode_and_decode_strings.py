@@ -7,6 +7,10 @@ https://neetcode.io/problems/string-encode-and-decode/question
 class Solution:
     # trick is to have delimiter like this:
     # number of characters in upcoming string + special char
+    def __init__(self):
+        # setup our special char, used for delimiting
+        # the encoding
+        self.special_char = ';'
 
     def encode(self, strs: List[str]) -> str:
         # initialize our final encoded string
@@ -14,9 +18,9 @@ class Solution:
 
         # loop through all strings in input array
         for string in strs:
-            # add the length of the string + ;
+            # add the length of the string + our special char ';'
             # as our delimiter
-            encoding += str(len(string)) + ';'
+            encoding += str(len(string)) + self.special_char
             # then add the string itself
             encoding += string
 
@@ -24,7 +28,7 @@ class Solution:
         return encoding
 
     def decode(self, s: str) -> List[str]:
-        # initialize our final decoded list
+        # initialze our final decoded list
         decoding = []
 
         # begin looping through the entire input string
@@ -35,7 +39,7 @@ class Solution:
             # set our second pointer j, beginning at i
             j = i
             # loop until j does not equal our special char ';'
-            while s[j] != ';':
+            while s[j] != self.special_char:
                 j += 1
         
             # our number of characters will always be
