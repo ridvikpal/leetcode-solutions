@@ -1,6 +1,7 @@
 import math
 from typing import Optional
 
+
 '''
 https://leetcode.com/problems/validate-binary-search-tree/description/
 '''
