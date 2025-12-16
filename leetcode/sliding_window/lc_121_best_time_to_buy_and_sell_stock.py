@@ -5,10 +5,6 @@ from typing import List
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 '''
 class Solution:
-    # note this is a 2 pointer problem because
-    # we are inadvertently having 1 pointer point
-    # to the min buy price, and another pointing
-    # to the max sell price to get the max profit
     def maxProfit(self, prices: List[int]) -> int:
         # we will first init our
         # buy price to (10^4)+1 because
