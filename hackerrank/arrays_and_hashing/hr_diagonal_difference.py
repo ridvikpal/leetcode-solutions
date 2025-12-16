@@ -1,11 +1,5 @@
 #!/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
-
 #
 # Complete the 'diagonalDifference' function below.
 #
@@ -36,20 +30,3 @@ def diagonalDifference(arr):
     # finally return the absolute difference between
     # the sum of it's diagonals
     return abs(left_right_diagonal - right_left_diagonal)
-    
-
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
-    n = int(input().strip())
-
-    arr = []
-
-    for _ in range(n):
-        arr.append(list(map(int, input().rstrip().split())))
-
-    result = diagonalDifference(arr)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
