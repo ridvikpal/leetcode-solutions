@@ -10,7 +10,7 @@ class Solution:
         result = []
 
         # our recursive search function
-        # it will search all possibe permutations 1 by 1
+        # it will search all possible permutations 1 by 1
         def search(start_index):
             # our base case is when our start_index is out of bounds
             # or last value
