@@ -11,7 +11,7 @@ class Solution:
             return []
         
         # initialize our dictionary that maps
-        # each digit to a list of possible characters
+        # each digit to a tuple of possible characters
         dictionary = {
             '2': ('a', 'b' , 'c'),
             '3': ('d', 'e' , 'f'),
