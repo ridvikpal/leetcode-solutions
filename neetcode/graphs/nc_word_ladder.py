@@ -15,7 +15,7 @@ class Solution:
 
         # init our adjacency list
         # since we are creating a graph of words
-        # where adjacenct words differ by 1 char
+        # where adjacent words differ by 1 char
         adjacency_list = defaultdict(list)
 
         # loop through all the words in wordList
@@ -75,7 +75,3 @@ class Solution:
                         queue.append(adjacent_word)
                         # mark it as visited
                         visited.add(adjacent_word)
-
-        # finally return 0 at the very end
-        # if we are unable to find the word via bfs
-        return 0
