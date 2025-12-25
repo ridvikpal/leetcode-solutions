@@ -3,7 +3,7 @@ from typing import List
 
 # We will use the disjoint set union 
 # (DSU aka. union-find) algorithm
-# with path compression and size
+# with path compression and rank (subtree height)
 # to solve this problem, so init the class
 class DSU():
     def __init__(self, n):
@@ -21,17 +21,18 @@ class DSU():
         # holds the top level root parent, not the immediate root
         self.parent = list(range(n))
 
-        # we can init our size array
+        # we can init our rank array
         # this will hold the number of connected nodes
         # for each subtree, for each parent
         # ex [1, 2, 1, 1]
         # this means that node 2 is a parent node
         # for which there are 2 nodes connected in it's subtree
         # which from the parent array we can see are nodes 1 and 2
+        # so it's height (rank) is 2
         # however, nodes 0, 2 and 1 only have 1 node connected
         # to their subtrees since they are only parents to themselves
-        # or are leaf child nodes for another parent
-        self.size = [1]*n
+        # or are leaf child nodes for another parent, so their rank is 1
+        self.rank = [1]*n
 
         # we can initialize our component count.
         # at the start, each node is it's own disjoint set
@@ -71,32 +72,31 @@ class DSU():
             # just return without combining
             return
 
-        # if the size of parent2 is > size of parent1
+        # if the rank of parent2 is > rank of parent1
         # swap them so we always merge sets where
-        # the set with most nodes "consumes" the set with
-        # less nodes in the lines below
-        if self.size[parent2] > self.size[parent1]:
+        # the set with the largest subtree height "consumes" 
+        # the set with the smaller subtree height in the lines below
+        if self.rank[parent2] > self.rank[parent1]:
             parent1, parent2 = parent2, parent1
         
         # just set the parent2 node to be a child
         # of parent1, thust moving all child nodes in parent2
         # to be child nodes of parent1
-        # from above, we guarentee that size(parent1) > size(parent2)
+        # from above, we guarentee that rank(parent1) > rank(parent2)
         self.parent[parent2] = parent1
 
-        # after merging parent2 into parent1, we can increment the size
-        # of parent 1 by the size of parent2 because it now contains 
-        # those new child nodes
-        self.size[parent1] += self.size[parent2]
+        # after merging parent2 into parent1, if the ranks were
+        # the same, then we need to increment the rank of parent1
+        # because the subtree height of parent1 would also increase by 1
+        if self.rank[parent1] == self.rank[parent2]:
+            self.rank[parent1] += 1
 
         # since we merged two sets together, we can decrement
         # the component count, since there is 
         # 1 less connected component (1 less disjoint set)
         self.componentCount -= 1
 
-'''
-https://neetcode.io/problems/count-connected-components/question
-'''
+
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         # we will init our dsu object
