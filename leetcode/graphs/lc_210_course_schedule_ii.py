@@ -6,6 +6,10 @@ from typing import List
 https://leetcode.com/problems/course-schedule-ii/description/
 '''
 class Solution:
+    # we will use topological sort with post-order dfs
+    # to solve this problem since we are essentially sorting
+    # the courses from last (no dependencies) to first (has dependencies)
+    # this is a dependency resolution problem where dependencies are prereq courses
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         # first we will create our adjacency list
         # to represent the courses as a graph
@@ -33,9 +37,11 @@ class Solution:
 
         # our recursive dfs function that will be used
         # to detect a cycle in the course graph
-        # if there is a cycle then there is a circular dependency
-        # meaning that a course cannot be taken because there are
+        # if there is a cycle that means a course 
+        # cannot be taken because there are
         # circular preq dependencies
+        # it will also add the course to our courseOrder
+        # in post-order fashion, standard for dfs topological sort
         def dfsCycleDetection(course):
             # check if we are currently visiting this course
             # and have not backtracked yet 
