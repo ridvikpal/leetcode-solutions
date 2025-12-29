@@ -7,7 +7,6 @@ https://leetcode.com/problems/maximum-subarray/description/
 '''
 class Solution:
     # We will use Kadane's algorithm to solve this problem
-    # using a greedy approach
     def maxSubArray(self, nums: List[int]) -> int:
         # init our initial max sum
         # to negative infinity
