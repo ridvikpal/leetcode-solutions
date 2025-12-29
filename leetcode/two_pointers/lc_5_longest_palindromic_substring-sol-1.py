@@ -5,7 +5,7 @@ class Solution:
     def longestPalindrome(self, s: str) -> str:
         # first handle the edge case
         # where we are given a string with 1 char
-        # 1 char, just return it directly
+        # just return it directly
         if len(s) == 1:
             return s
         

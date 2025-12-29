@@ -7,8 +7,7 @@ class Solution:
         # first handle the edge case where
         # we are given a string of length 1
         if len(s) == 1:
-            # we can simply return the
-            # single char directly
+            # we can simply return 1 directly
             return 1
 
         # we can init our palindrome count to 0
