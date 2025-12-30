@@ -55,7 +55,7 @@ class Solution:
                 # remember canSplit is +1 index compared to string s
                 # if true we have found a valid word in our wordDict
                 # that we can split the string s on
-                if substring in wordDict and canSplit[start]:
+                if substring in wordSet and canSplit[start]:
                     # since we can split the string s here
                     # setup the canSplit value for this index to True
                     # remember again canSplit is +1 index compared to string s
