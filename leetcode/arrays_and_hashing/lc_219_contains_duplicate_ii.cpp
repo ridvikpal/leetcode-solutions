@@ -21,7 +21,7 @@ public:
         std::unordered_map<int, int> seen{};
 
         // loop through all values in the nums array
-        for (int i = 0; const auto& num: nums) {
+        for (int i{0}; const auto& num: nums) {
             // attempt to find the num in our map
             const auto it = seen.find(num);
             
