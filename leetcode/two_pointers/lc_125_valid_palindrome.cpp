@@ -8,7 +8,7 @@ public:
     bool isPalindrome(std::string s) {
         // first handle the edge case where the
         // the string is empty
-        if (s.length() == 0) {
+        if (s.size() == 0) {
             // in this case we immediately return true
             // an empty string is a palindrome
             return true;
@@ -18,7 +18,7 @@ public:
         // init our left pointer to point to the first char
         int left{0};
         // init our right pointer to point to the last char
-        int right{static_cast<int>(s.length()-1)};
+        int right{static_cast<int>(s.size()-1)};
 
         // loop as long as the pointers don't overlap
         while (left < right) {
