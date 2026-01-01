@@ -9,6 +9,11 @@ public:
         // init our total area
         int totalArea{0};
 
+        // init our temporary area 
+        // that we will store calculated area
+        // of water for each height index
+        int calculatedArea{0};
+
         // first we will calculate the maxmimum left heights
         // for all the indices, so init our max_left_height array
         std::vector<int> maxLeftHeight(height.size());
@@ -48,14 +53,14 @@ public:
             // the area at this index is equal to the
             // minimum max height we found - the current height
             // at this index
-            int area{std::min(maxLeftHeight[i], maxRightHeight[i]) - height[i]};
+            calculatedArea = std::min(maxLeftHeight[i], maxRightHeight[i]) - height[i];
 
             // the area may be negative, so we only
             // add to the total area if it's positive
-            if (area > 0) {
+            if (calculatedArea > 0) {
                 // add the positive area to the
                 // total area
-                totalArea += area;
+                totalArea += calculatedArea;
             }
         }
 
