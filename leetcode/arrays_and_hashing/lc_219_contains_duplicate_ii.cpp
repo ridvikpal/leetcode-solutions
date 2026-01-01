@@ -21,9 +21,9 @@ public:
         std::unordered_map<int, int> seen{};
 
         // loop through all values in the nums array
-        for (int i{0}; const auto& num: nums) {
+        for (int i{0}; i < nums.size(); i++) {
             // attempt to find the num in our map
-            const auto it = seen.find(num);
+            const auto it = seen.find(nums[i]);
             
             // check if we have actually found it
             if (it != seen.end()) {
@@ -40,10 +40,7 @@ public:
             
             // otherwise, update our number in our map
             // even overwriting it if there are multiple duplicates
-            seen[num] = i;
-
-            // make sure to increment the index variable i
-            ++i;
+            seen[nums[i]] = i;
         }
 
         // by this point we have checked all nums
