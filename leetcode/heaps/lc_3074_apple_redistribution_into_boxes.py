@@ -3,7 +3,7 @@ from typing import List
 
 
 '''
-https://leetcode.com/problems/apple-redistribution-into-boxes/description/?envType=daily-question&envId=2025-12-24
+https://leetcode.com/problems/apple-redistribution-into-boxes/description/
 '''
 class Solution:
     def minimumBoxes(self, apple: List[int], capacity: List[int]) -> int:
@@ -23,7 +23,7 @@ class Solution:
 
         # init the count of boxes we will use for redistribution
         count = 0
-        
+
         # loop as long as there is capacity to use
         # and as long as there are apples to redistribute
         while negative_capacity and total_apples > 0:
