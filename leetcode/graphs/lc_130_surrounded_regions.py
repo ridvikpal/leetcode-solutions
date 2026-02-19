@@ -9,7 +9,7 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
-        
+
         # first get the dimensions of the board
         row_len = len(board)
         col_len = len(board[0])
@@ -20,8 +20,8 @@ class Solution:
         # our recursive dfs function, which will
         # look for adjacent 'O' cells to (row, col) and
         # mark them as '1' instead
-        # we will use it to find all adjacent 'O' cells to 
-        # the 'O' cells at the boarders of the board and
+        # we will use it to find all adjacent 'O' cells to
+        # the 'O' cells at the borders of the board and
         # flip them to '1', so they we know which 'O' cells
         # we CANNOT mark as surrounded and flip to 'X"
         def dfs(row, col):
@@ -52,7 +52,7 @@ class Solution:
             if board[row][col_len-1] == 'O':
                 # and run dfs on them if they exist
                 dfs(row, col_len-1)
-        
+
         # loop through all cols
         for col in range(col_len):
             # check the top border for 'O' cells
