@@ -10,7 +10,7 @@ class Solution:
     # which is a modified dfs that appends to path in post-order
     # and removes edges from the adjacency_list as it visits them
     # the goal of Hierholzer algorithm is to create a Eulerian path
-    # that visits all edges, where regular dfs aims to visit all vertices
+    # that visits all edges, whereas regular dfs aims to visit all vertices
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         # first we will create our adjacency list to model the graph
         # init our adjacency list object
@@ -48,7 +48,7 @@ class Solution:
                 # aka fly to the next city from this city
                 # with the flight ticket you just got
                 dfs(next_city)
-            
+
             # finally add the city to the path after
             # no more flights exist from it (all flights
             # from this city have been taken)
