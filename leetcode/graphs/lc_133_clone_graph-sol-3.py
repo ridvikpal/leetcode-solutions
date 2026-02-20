@@ -51,13 +51,11 @@ class Solution:
                     newNeighbour = Node(oldNeighbour.val)
                     # add it to the oldToNew dictionary
                     oldToNew[oldNeighbour] = newNeighbour
-                    # and add it to the neighbours of the newNode
-                    oldToNew[oldNode].neighbors.append(newNeighbour)
-                # else we have already cloned it
-                else:
-                    # so just add it to the neighbours of the newNode
-                    oldToNew[oldNode].neighbors.append(oldToNew[oldNeighbour])
-                
+
+                # now, we can add the deep cloned neighbour to the
+                # neighbour adjacency list of our deep cloned new node
+                oldToNew[oldNode].neighbors.append(oldToNew[oldNeighbour])
+
                 # check if we have not already visited the oldNeighbour
                 if oldNeighbour not in visited:
                     # in this case, add it to our stack
