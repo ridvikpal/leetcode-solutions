@@ -21,19 +21,11 @@ class Solution:
         # we will use a dictionary where keys are
         # wildcard matching patterns and values
         # are a list of words that match that wildcard pattern
+        # this is effectively our adjacency list
         patterns = defaultdict(list)
 
-        # loop through each index of a word
-        for i in range(word_len):
-            # create a wildcard pattern where the '*'
-            # char is at incrementing indices for beginWord
-            # ex. a*other, an*ther, ano*her, ...
-            pattern = beginWord[:i] + '*' + beginWord[i+1:word_len]
-            # add beginWord to it's wildcard patterns
-            patterns[pattern].append(beginWord)
-
-        # loop through all words in wordList
-        for word in wordList:
+        # loop through all words in wordList and beginWord
+        for word in (wordList + [beginWord]):
             # loop through each index of a word
             for i in range(word_len):
                 # create a wildcard pattern where the '*'
