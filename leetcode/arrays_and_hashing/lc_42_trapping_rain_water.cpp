@@ -9,7 +9,7 @@ public:
         // init our total area
         int totalArea{0};
 
-        // init our temporary area 
+        // init our temporary area
         // that we will store calculated area
         // of water for each height index
         int calculatedArea{0};
@@ -23,13 +23,13 @@ public:
 
         // loop through all height indices starting at 1
         for (int i{1}; i < height.size(); i++) {
-            // set the max left height to be the 
+            // set the max left height to be the
             // previous max left height or height at
             // the index just before i
             maxLeftHeight[i] = std::max(maxLeftHeight[i-1], height[i-1]);
         }
 
-        // next we will calculate the maxmimum right heights
+        // next we will calculate the maximum right heights
         // for all the indices, so init our max_right_height array
         std::vector<int> maxRightHeight(height.size());
         // our base case is that our rightmost max right height
