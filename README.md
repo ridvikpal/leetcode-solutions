@@ -1,6 +1,6 @@
 # ridvikpal/leetcode-solutions
 
-This repo contains fully commented solutions to problems from common data structures and algorithms websites:
+This repo contains my solutions to problems from common data structures and algorithms websites:
 
 - [LeetCode](leetcode/)
 - [NeetCode](neetcode/)
