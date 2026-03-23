@@ -1,6 +1,9 @@
 #include <string>
 #include <unordered_map>
 
+/**
+ * https://leetcode.com/problems/valid-anagram/description/
+ */
 class Solution {
 public:
     bool isAnagram(std::string s, std::string t) {
