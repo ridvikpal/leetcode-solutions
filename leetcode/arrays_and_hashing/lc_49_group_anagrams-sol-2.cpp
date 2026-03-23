@@ -12,7 +12,7 @@ public:
         std::vector<int> counter(26, 0);
 
         for (char chr: str) {
-            counter[chr - 'a'] += 1;
+            counter[static_cast<int>(chr) - static_cast<int>('a')] += 1;
         }
 
         return counter;
