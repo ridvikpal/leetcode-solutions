@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <array>
 #include <unordered_map>
 #include <algorithm>
 
@@ -8,8 +9,8 @@
  */
 class Solution {
 public:
-    std::vector<int> countChars(const std::string& str) {
-        std::vector<int> counter(26, 0);
+    std::array<int, 26> countChars(const std::string& str) {
+        std::array<int, 26> counter{};
 
         for (char chr: str) {
             counter[static_cast<int>(chr) - static_cast<int>('a')] += 1;
@@ -23,7 +24,7 @@ public:
         std::unordered_map<std::string, std::vector<std::string>> anagramMap;
 
         for (const std::string& str: strs) {
-            std::vector<int> counter = countChars(str);
+            std::array<int, 26> counter = countChars(str);
 
             std::string key = "";
 
