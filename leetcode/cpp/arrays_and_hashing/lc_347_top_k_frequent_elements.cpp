@@ -4,6 +4,9 @@
 
 /**
  * https://leetcode.com/problems/top-k-frequent-elements/description/
+ *
+ * Time complexity: O(n * k * u.) where n = length of nums, u = number of unique nums in nums
+ * Space complexity O(u) where u = number of unique nums in nums
  */
 class Solution {
 public:

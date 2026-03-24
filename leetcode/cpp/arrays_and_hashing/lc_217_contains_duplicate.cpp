@@ -3,6 +3,9 @@
 
 /**
  * https://leetcode.com/problems/contains-duplicate/description/
+ *
+ * Time complexity: O(n) where n = length of nums
+ * Space complexity: O(n) where n = length of nums
  */
 class Solution {
 public:

@@ -3,6 +3,9 @@
 
 /**
  * https://leetcode.com/problems/valid-anagram/description/
+ *
+ * Time complexity: O(n) where n = longest string length between s and t
+ * Space complexity: O(1) because there can only be 26 letters used
  */
 class Solution {
 public:

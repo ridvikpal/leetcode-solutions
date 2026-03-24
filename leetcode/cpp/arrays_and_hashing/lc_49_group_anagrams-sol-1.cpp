@@ -5,6 +5,9 @@
 
 /**
  * https://leetcode.com/problems/group-anagrams/description/
+ *
+ * Time complexity: O(n * klog(k)) where n = length of strs, k = longest string length in strs
+ * Space complexity O(n * k) where n = length of strs, k = longest string length in strs
  */
 class Solution {
 public:

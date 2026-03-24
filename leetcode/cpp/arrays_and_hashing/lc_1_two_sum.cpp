@@ -3,6 +3,9 @@
 
 /**
  * https://leetcode.com/problems/two-sum/description/
+ *
+ * Time complexity: O(n) where n = length of nums
+ * Space complexity: O(n) where n = length of nums
  */
 class Solution {
 public:
