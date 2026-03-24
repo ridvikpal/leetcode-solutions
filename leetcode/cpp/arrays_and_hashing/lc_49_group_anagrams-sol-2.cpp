@@ -12,7 +12,7 @@ public:
     std::array<int, 26> countChars(const std::string& str) {
         std::array<int, 26> counter{};
 
-        for (char chr: str) {
+        for (const char& chr: str) {
             counter[static_cast<int>(chr) - static_cast<int>('a')] += 1;
         }
 

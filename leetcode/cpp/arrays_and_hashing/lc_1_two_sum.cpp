@@ -10,7 +10,7 @@ public:
         std::vector<int> result;
         std::unordered_map<int, int> seen;
 
-        for (int i{0}; i < nums.size(); i++) {
+        for (int i{0}; i < nums.size(); ++i) {
             int difference = target - nums[i];
             auto iterator = seen.find(difference);
 
