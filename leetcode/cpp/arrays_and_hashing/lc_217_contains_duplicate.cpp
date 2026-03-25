@@ -12,7 +12,7 @@ public:
     bool containsDuplicate(std::vector<int>& nums) {
         std::unordered_set<int> seen;
 
-        for (const int& num: nums) {
+        for (const int& num : nums) {
             if (seen.find(num) != seen.end()) {
                 return true;
             }

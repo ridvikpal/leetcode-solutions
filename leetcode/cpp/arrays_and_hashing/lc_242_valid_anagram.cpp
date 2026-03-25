@@ -13,11 +13,11 @@ public:
         std::unordered_map<char, int> s_counter;
         std::unordered_map<char, int> t_counter;
 
-        for (const char& s_char: s) {
+        for (const char& s_char : s) {
             s_counter[s_char] += 1;
         }
 
-        for (const char& t_char: t) {
+        for (const char& t_char : t) {
             t_counter[t_char] += 1;
         }
 

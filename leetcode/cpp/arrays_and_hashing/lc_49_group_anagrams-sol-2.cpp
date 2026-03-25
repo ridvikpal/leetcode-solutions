@@ -31,14 +31,14 @@ public:
 
             std::string key = "";
 
-            for (const int& count: counter) {
+            for (const int& count : counter) {
                 key += std::to_string(count) + '#';
             }
 
             anagramMap[key].push_back(str);
         }
 
-        for (const auto& anagramMapPair: anagramMap) {
+        for (const auto& anagramMapPair : anagramMap) {
             result.push_back(anagramMapPair.second);
         }
 

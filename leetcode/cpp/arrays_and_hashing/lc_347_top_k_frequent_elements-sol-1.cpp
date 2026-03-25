@@ -14,11 +14,11 @@ public:
         std::unordered_map<int, int> counter;
         std::vector<int> result;
 
-        for (const int& num: nums) {
+        for (const int& num : nums) {
             counter[num] += 1;
         }
 
-        for (int i{0}; i < k; i++) {
+        for (int i{0}; i < k; ++i) {
             auto iterator = std::max_element(counter.begin(), counter.end(),
                 [](const std::pair<int, int>& a, const std::pair<int, int>& b) {
                     return a.second < b.second;

@@ -22,7 +22,7 @@ public:
             anagramMap[str_key].push_back(str);
         }
 
-        for (const auto& anagramMapPair: anagramMap) {
+        for (const auto& anagramMapPair : anagramMap) {
             result.push_back(anagramMapPair.second);
         }
 
